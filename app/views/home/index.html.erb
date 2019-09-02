@@ -1,1 +1,49 @@
 사람에게 관심을
+
+<div id="data-input" class="container">
+  <h1>일하면서 본인이 중요하다고 생각하는건 무엇인가요?</h1>
+  <p class="lead">순서대로 정렬해주세요.</p>
+
+  <div class="alert alert-info" id="description">마우스를 카드위에 올리면 카드에 대한 설명이 나옵니다.</div>
+
+  <ul id="motivators">
+    <%10.times.each do | index |%>
+      <li data-index="<%=index%>"><%= image_tag "motiv_#{index+1}.png", class: "motivator"%></li>
+    <%end%>
+  </ul>
+  <p class="right">
+    <a class="btn btn-lg btn-success" data-toggle="modal" data-target="#myModal" href="#">Salvar ordem</a>
+  </p>
+</div>
+
+<div id="success_message" class="container">
+  <div class="alert alert-success">
+    <strong>Obrigado por participar!</strong>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Quem é você?</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+          <select id="user">
+            <%# all_users.each do |user_name| %>
+<!--              <option value="<%#= user_name.gsub(' ', '_').downcase %>"><%#= user_name %></option>-->
+            <%# end %>
+          </select>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button id="hide" type="button" class="btn btn-primary" id="saveOrder">Salvar ordem</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
