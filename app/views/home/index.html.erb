@@ -1,19 +1,17 @@
-사람에게 관심을
-
 <div id="data-input" class="container">
-  <h1>일하면서 본인이 중요하다고 생각하는건 무엇인가요?</h1>
-  <p class="lead">순서대로 정렬해주세요.</p>
+  <h1 class="p-3">일하면서 본인이 중요하다고 생각하는건 무엇인가요?</h1>
+  <h2 class="p-3">순서대로 정렬해주세요.</h2>
 
   <div class="alert alert-info" id="description">마우스를 카드위에 올리면 카드에 대한 설명이 나옵니다.</div>
 
   <ul id="motivators">
-    <%10.times.each do | index |%>
-      <li data-index="<%=index%>"><%= image_tag "motiv_#{index+1}.png", class: "motivator"%></li>
-    <%end%>
+    <% 10.times.each do |index| %>
+      <li data-index="<%= index %>"><%= image_tag "motiv_#{index + 1}.png", class: "motivator" %></li>
+    <% end %>
   </ul>
-  <p class="right">
-    <a class="btn btn-lg btn-success" data-toggle="modal" data-target="#myModal" href="#">Salvar ordem</a>
-  </p>
+  <div class="text-center">
+    <button class="btn btn-lg btn-primary submit-btn btn-lg" data-toggle="modal" data-target="#myModal" href="#">제출하기</button>
+  </div>
 </div>
 
 <div id="success_message" class="container">
@@ -21,29 +19,28 @@
     <strong>Obrigado por participar!</strong>
   </div>
 </div>
-
-
-
-<div class="modal fade" id="myModal">
-  <div class="modal-dialog">
+<div class="modal" tabindex="-1" role="dialog" id="myModal">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Quem é você?</h4>
+        <h5 class="modal-title">영어이름을 적어주세요.</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
       <div class="modal-body">
         <p>
-          <select id="user">
+          <textarea id="user">
             <%# all_users.each do |user_name| %>
-<!--              <option value="<%#= user_name.gsub(' ', '_').downcase %>"><%#= user_name %></option>-->
+            <!--              <option value="<%#= user_name.gsub(' ', '_').downcase %>"><%#= user_name %></option>-->
             <%# end %>
-          </select>
+          </textarea>
         </p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-        <button id="hide" type="button" class="btn btn-primary" id="saveOrder">Salvar ordem</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+    </div>
+  </div>
+</div>
