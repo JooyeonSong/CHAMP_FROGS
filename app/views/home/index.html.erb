@@ -1,7 +1,7 @@
 
 <%= current_user.email%>
 
-<a href="users/sign_out" date-method="delete">로그아웃</a>
+<%= link_to '로그아웃', destroy_user_session_url, method: 'delete', title: '로그아웃' %>
 
 
 <div id="data-input" class="container">
