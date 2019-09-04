@@ -9,16 +9,3 @@ Window.motivatorsDescription = [
   "전문성 : 내 업무가 도전적이기는 하지만 여전히 내 능력 범위 안에 있습니다",
   "힘 : 나는 주변에서 일어나는 일에 필요한 만큼 영향을 미칠 수 있습니다",
   "관계 : 나는 함께 일하는 사람들과 좋은 관계를 맺고 있습니다"]
-
-
-$('#saveOrder').click ->
-  order = []
-  $("#motivators li").each (index, item) ->
-    order.push($(item).data("index"))
-  $.post '/answers',
-    user: $("#user").val()
-    ordering: order.join(","),
-    success: ->
-      $("#data-input").remove()
-      $("#success_message").show()
-      $('#myModal').modal('hide')

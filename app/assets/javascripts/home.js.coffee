@@ -16,3 +16,15 @@ $ ->
   $(".description").each (index, item) ->
     $item = $(item)
     $item.text(Window.motivatorsDescription[$item.data("index")])
+
+  $('#saveOrder').click ->
+    console.log("TEST")
+    order = []
+    $("#motivators li").each (index, item) ->
+      order.push($(item).data("index"))
+    $.post '/answers',
+      ordering: order.join(","),
+      success: ->
+#        $("#data-input").remove()
+#        $("#success_message").show()
+#        $('#myModal').modal('hide')
