@@ -1,0 +1,15 @@
+@import "common";
+$width-session: rem-calc(360);
+.form-session {
+  margin: rem-calc(64) auto 0 auto;
+  padding: rem-calc(0 24);
+  max-width: $width-session;
+
+  .form-check-input {margin-top: rem-calc(6);}
+  .form-check-label {
+    //@include h6;
+    color: $color-text-secondary;
+  }
+  .form-check + .btn {margin-top: rem-calc(8);}
+  .form-group + .btn {margin-top: rem-calc(32);}
+}

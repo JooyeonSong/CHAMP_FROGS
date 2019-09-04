@@ -1,10 +1,14 @@
-
-<%= current_user.email%>
-
-<%= link_to '로그아웃', destroy_user_session_url, method: 'delete', title: '로그아웃' %>
-
-
 <div id="data-input" class="container">
+  <nav class="navbar navbar-global navbar-expand-lg navbar-light">
+    <div class="collapse navbar-collapse" id="navbarText">
+
+      <ul class="navbar-nav">
+
+        <li class="nav-item"><%= current_user.email %></li>
+        <li class="nav-item"><%= link_to '로그아웃', destroy_user_session_url, method: 'delete', title: '로그아웃' %></li>
+      </ul>
+    </div>
+  </nav>
   <h1 class="p-3">일하면서 본인이 중요하다고 생각하는건 무엇인가요?</h1>
   <h2 class="p-3">순서대로 정렬해주세요.</h2>
 
