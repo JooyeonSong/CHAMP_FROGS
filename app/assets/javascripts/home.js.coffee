@@ -4,7 +4,7 @@
 $ ->
   $("#motivators").sortable()
   $("#motivators").disableSelection()
-  $( "#motivators" ).on "sortover", (event, ui) ->
+  $("#motivators").on "sortover", (event, ui) ->
     $(ui.item).tooltip("toggle")
 
   $("#motivators li").on "mouseleave", ->
@@ -18,12 +18,14 @@ $ ->
     $item.text(Window.motivatorsDescription[$item.data("index")])
 
   $('#saveOrder').click ->
-    console.log("TEST")
     order = []
     $("#motivators li").each (index, item) ->
       order.push($(item).data("index"))
     $.post '/answers',
-      ordering: order.join(","),
+      {
+        answer:
+          ordering: order.join(",")
+      },
       success: ->
 #        $("#data-input").remove()
 #        $("#success_message").show()

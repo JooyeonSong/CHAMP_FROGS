@@ -16,7 +16,7 @@
 
   <ul id="motivators">
     <% 10.times.each do |index| %>
-      <li data-index="<%= index %>"><%= image_tag "motiv_#{index + 1}.png", class: "motivator" %></li>
+      <li data-index="<%= index + 1 %>"><%= image_tag "motiv_#{index + 1}.png", class: "motivator" %></li>
     <% end %>
   </ul>
   <div class="text-center">

@@ -16,10 +16,11 @@ ActiveRecord::Schema.define(version: 20190904121922) do
   enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
-    t.string "user_name"
     t.integer "ordering", array: true
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
