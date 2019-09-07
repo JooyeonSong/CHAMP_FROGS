@@ -1,3 +1,20 @@
+<h1>우리팀사람들이 가장중요하다고 생각한 카드 5장은 바로 아래와 같았습니다.두둥!</h1>
+<div class="row">
+  <div class="col-lg-16">
+    <ul id="motivators">
+      <% @ranked_top.each_with_index do |motivator, index| %>
+        <% if index == 5 %>
+          <% break %>
+        <% end %>
+        <li data-index="<%= motivator[0] + 1 %>"><%= image_tag "motiv_#{ motivator[0]}.png", class: "motivator" %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<br>
+<br>
+
+<h2>아래는 팀사람들의 답변입니다.</h2>
 <% @answers.each do |answer| %>
   <%= render answer, id: "#{answer.id}" %>
 <% end %>

@@ -1,6 +1,8 @@
 class AnswersController < ApplicationController
   def index
     @answers = Answer.all
+
+    @ranked_top = Answer.get_1st
   end
 
   def create
@@ -8,10 +10,6 @@ class AnswersController < ApplicationController
     @answer.ordering = answer_params[:ordering].split(',').map(&:to_i)
     @answer.save!
     redirect_to action: "index"
-  end
-
-  def show
-
   end
 
   def answer_params
