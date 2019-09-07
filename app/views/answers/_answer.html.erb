@@ -1,12 +1,10 @@
-<div class="container">
-  <div class="row">
-    <div class="col-lg-16">
-      <div class="email"><%= "↓ #{answer.user.email} ↓" %></div>
-      <ul id="motivators">
-        <% answer.ordering.each do |motivator| %>
-          <li data-index="<%= motivator + 1 %>"><%= image_tag "motiv_#{motivator}.png", class: "motivator" %></li>
-        <% end %>
-      </ul>
-    </div>
+<div class="row">
+  <div class="col-lg-16">
+    <div class="email"><%= "↓ #{answer.user.email} ↓" %></div>
+    <ul id="motivators">
+      <% answer.ordering.each do |motivator| %>
+        <li data-index="<%= motivator + 1 %>"><%= image_tag "motiv_#{motivator}.png", class: "motivator" %></li>
+      <% end %>
+    </ul>
   </div>
 </div>

@@ -1,27 +1,16 @@
-<div id="data-input" class="container">
-  <nav class="navbar navbar-global navbar-expand-lg navbar-light">
-    <div class="collapse navbar-collapse" id="navbarText">
+<h1 class="p-3">일하면서 본인이 중요하다고 생각하는건 무엇인가요?</h1>
+<h2 class="p-3">순서대로 정렬해주세요.</h2>
 
-      <ul class="navbar-nav">
+<div class="alert alert-info" id="description">마우스를 카드위에 올리면 카드에 대한 설명이 나옵니다.</div>
 
-        <li class="nav-item"><%= current_user.email %></li>
-        <li class="nav-item"><%= link_to '로그아웃', destroy_user_session_url, method: 'delete', title: '로그아웃' %></li>
-      </ul>
-    </div>
-  </nav>
-  <h1 class="p-3">일하면서 본인이 중요하다고 생각하는건 무엇인가요?</h1>
-  <h2 class="p-3">순서대로 정렬해주세요.</h2>
-
-  <div class="alert alert-info" id="description">마우스를 카드위에 올리면 카드에 대한 설명이 나옵니다.</div>
-
-  <ul id="motivators">
-    <% 10.times.each do |index| %>
-      <li data-index="<%= index + 1 %>"><%= image_tag "motiv_#{index + 1}.png", class: "motivator" %></li>
-    <% end %>
-  </ul>
-  <div class="text-center">
-    <button class="btn btn-lg btn-primary submit-btn btn-lg" data-toggle="modal" data-target="#myModal" href="#">제출하기</button>
-  </div>
+<ul id="motivators">
+  <% 10.times.each do |index| %>
+    <li data-index="<%= index + 1 %>"><%= image_tag "motiv_#{index + 1}.png", class: "motivator" %></li>
+  <% end %>
+</ul>
+<div class="text-center">
+  <button class="btn btn-lg btn-primary submit-btn btn-lg" data-toggle="modal" data-target="#myModal" href="#">제출하기</button>
+</div>
 </div>
 
 <div id="success_message" class="container">
@@ -40,6 +29,7 @@
       </div>
       <div class="modal-body">
         <p>제출하고 난 후 우리팀 사람들의 CHAMPFROGS 순서를 한번 살펴보시고 멤버들과 조금 더 가까워지기를 바랍니다.</p>
+        <p>내적/외적 동기가 일하면서 채워지고 있는지 한번 생각해보세요.</p>
         <p>그리고 본인이 일하면서 언제 즐거웠고 슬펐는지 생각해보시고 어떻게 해야 일을 더 즐겁게 할수 있을지 같이 고민해보는 시간을 가졌으면합니다.</p>
       </div>
       <div class="modal-footer">
