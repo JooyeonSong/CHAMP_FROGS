@@ -4,6 +4,5 @@ Rails.application.routes.draw do
   root to: 'home#index'
   devise_for :users
 
-  # post '/answers' => 'home#save_answer'
-  resources :answers
+  resources :answers, only: [:index, :create]
 end
