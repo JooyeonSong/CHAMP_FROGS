@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: CHAMPFROGS_production
-  username: CHAMPFROGS
+#  username: CHAMPFROGS
   password: <%= ENV['CHAMPFROGS_DATABASE_PASSWORD'] %>
