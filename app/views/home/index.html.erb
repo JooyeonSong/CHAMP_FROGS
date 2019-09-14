@@ -4,8 +4,14 @@
 <div class="alert alert-info" id="description">마우스를 카드위에 올리면 카드에 대한 설명이 나옵니다.</div>
 
 <ul id="motivators">
-  <% 10.times.each do |index| %>
-    <li data-index="<%= index + 1 %>"><%= image_tag "motiv_#{index + 1}.png", class: "motivator" %></li>
+  <% if @answer != nil %>
+    <% @answer.ordering.each do |motivator| %>
+      <li data-index="<%= motivator %>"><%= image_tag "motiv_#{motivator}.png", class: "motivator" %></li>
+    <% end %>
+  <% else %>
+    <% 10.times.each do |index| %>
+      <li data-index="<%= index + 1 %>"><%= image_tag "motiv_#{index + 1}.png", class: "motivator" %></li>
+    <% end %>
   <% end %>
 </ul>
 <div class="text-center">

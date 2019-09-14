@@ -3,7 +3,7 @@
     <div class="email"><%= "↓ #{answer.user.email} ↓" %></div>
     <ul id="motivators">
       <% answer.ordering.each do |motivator| %>
-        <li data-index="<%= motivator + 1 %>"><%= image_tag "motiv_#{motivator}.png", class: "motivator" %></li>
+        <li data-index="<%= motivator %>"><%= image_tag "motiv_#{motivator}.png", class: "motivator" %></li>
       <% end %>
     </ul>
   </div>
