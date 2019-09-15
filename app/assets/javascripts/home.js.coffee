@@ -1,7 +1,8 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
-$ ->
+document.addEventListener('turbolinks:load', ->
+  $(document).on 'ready page:load', ->
   $("#motivators").sortable()
   $("#motivators").disableSelection()
   $("#motivators").on "sortover", (event, ui) ->
@@ -27,6 +28,5 @@ $ ->
           ordering: order.join(",")
       },
       success: ->
-#        $("#data-input").remove()
-#        $("#success_message").show()
-#        $('#myModal').modal('hide')
+)
+
