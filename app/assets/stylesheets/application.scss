@@ -3,10 +3,8 @@
  *= require_self
  *= require_directory .
  */
-
 @import "common";
 @import "bootstrap";
-
 @import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo:400,700,800&subset=korean');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900');
 @import url(//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css);
@@ -16,9 +14,10 @@
 }
 
 .logo {
-  width: 200px;
+  color: #1e88e5;
+  font-weight: bold;
   float: right;
-  padding: 20px;
+  padding: 5px;
   text-align: center;
 }
 
@@ -83,159 +82,11 @@ select {
   padding: 20px;
 }
 
-.navbar-global {
-  height: $height-navbar;
-
-  .navbar-brand {
-    font-size: 0;
-    padding: 0;
-    vertical-align: top;
-
-    @media (max-width: 991px) {
-      .bi-nav-head,
-      .bi-nav-tail {display: none;}
-    }
-
-    .bi-nav-body {
-      -webkit-transform: rotate(0deg);
-      -moz-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-      -o-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-
-    h4 {
-      font-weight: 500;
-      i {
-        margin-top: rem-calc(-3);
-        vertical-align: middle;
-      }
-    }
-
-    &:hover {
-      .bi-nav-body {
-        transition: 1s ease;
-        -webkit-transform: rotate(-720deg);
-        -moz-transform: rotate(-720deg);
-        -ms-transform: rotate(-720deg);
-        -o-transform: rotate(-720deg);
-        transform: rotate(-720deg);
-      }
-      h4 {color: $color-primary;}
-    }
-  }
-
-  .header-title {
-    @include transform(translateX(-50%));
-    font-weight: 900;
-    position: absolute;
-    top: rem-calc(11);
-    left: 50%;
-
-  }
-
-  .form-search {
-    margin: rem-calc(0 16);
-    padding-left: rem-calc(40);
-    background: asset_url('img-search-deemed.png') no-repeat rem-calc(12) center;
-    background-size: rem-calc(24);
-
-    &:focus {
-      background: asset_url('img-search-primary.png') no-repeat rem-calc(12) center;
-      background-size: rem-calc(24);
-    }
-  }
-
-  .navbar-nav {
-    margin-left: auto;
-
-    li:nth-child(n+2) {margin-left: 8px;}
-  }
-
-  .breadcrumb {
-    display: inline-block;
-    vertical-align: super;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    background-color: transparent;
-    border-radius: 0;
-
-    .breadcrumb-item {
-      display: inline-block;
-      vertical-align: top;
-      font-weight: 700;
-      font-size: 19px;
-      line-height: 28px;
-
-      .navbar-brand {
-        margin-right: rem-calc(4);
-      }
-
-      & + .breadcrumb-item:before {
-        color: $blue-grey-200;
-      }
-
-      a {
-        color: $color-primary;
-        &:hover {color: $color-primary--hover;}
-      }
-    }
-
-    .active {
-      color: $color-text-primary;
-    }
-  }
-
-  .navbar-toggler {
-    @include transition();
-    border: 0;
-    padding: rem-calc(13 8);
-
-    &:hover {
-      background-color: $color-background--hover;
-
-      .navbar-toggler-bar {background-color: $color-primary;}
-    }
-
-    &:focus {outline: none;}
-
-    .navbar-toggler-bar {
-      @include transition();
-      display: block;
-      width: rem-calc(28);
-      height: rem-calc(2);
-      border-radius: rem-calc(3);
-      background-color: $blue-grey-500;
-
-      & + .navbar-toggler-bar {margin-top: rem-calc(4);}
-    }
-  }
-
-  .navbar-collapse.show {
-    @include elevation-3;
-    padding: rem-calc(16);
-    background-color: $color-background;
-    border-radius: rem-calc(3);
-  }
-
-  @media (max-width: 991px) {
-    .form-search {margin: rem-calc(16 0 0 0);}
-
-    .navbar-nav {
-      text-align: center;
-
-      .nav-item {
-        margin: rem-calc(16 0 0 0);
-
-        &:nth-child(n+2) {margin-left: 0;}
-
-        .btn {
-          margin: 0;
-          min-width: rem-calc(120);
-        }
-      }
-
+.navbar {
+  @media(min-width: 992px) {
+    .side-nav > li:last-child {
+      position: absolute;
+      bottom: 0;
     }
   }
 }
