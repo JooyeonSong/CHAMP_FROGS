@@ -11,11 +11,11 @@ $ ->
     $("#description").html("카드 위에 마우스를 올리면 설명이 나옵니다.")
 
   $("#motivators li").on "mouseenter", ->
-    $("#description").html(Window.motivatorsDescription[$(this).data("index")])
+    $("#description").html(Window.motivatorsDescription[$(this).data("index") - 1])
 
   $(".description").each (index, item) ->
     $item = $(item)
-    $item.text(Window.motivatorsDescription[$item.data("index")])
+    $item.text(Window.motivatorsDescription[$item.data("index") - 1])
 
   $('#saveOrder').click ->
     order = []
